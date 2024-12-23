@@ -8,30 +8,35 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: 'Nafissatou Faye - Engineer in Bioinformatics, Modeling, and Biotechnology',
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- Remove announcement if not needed -->
   <Fragment slot="announcement"></Fragment>
+  
+  <!-- Header -->
   <Fragment slot="header">
     <Header
       links={[
         { text: 'Home', href: '#' },
         { text: 'About', href: '#about' },
-        { text: 'Resume', href: '#resume' },
-        { text: 'Porfolio', href: '#porfolio' },
-        { text: 'Blog', href: '#blog' },
-        { text: 'Github', href: 'https://github.com/onwidget' },
+        { text: 'Experience', href: '#experience' },
+        { text: 'Education', href: '#education' },
+        { text: 'Projects', href: '#projects' },
+        { text: 'Skills', href: '#skills' },
+        // Remove blog link since we’re deleting the articles part
+        // { text: 'Blog', href: '#blog' },
       ]}
       actions={[
         {
-          text: 'Hire me',
-          href: '#',
+          text: 'Contact me',
+          href: 'mailto:nafissatou.faye15@gmail.com',
         },
       ]}
       isSticky
@@ -39,198 +44,206 @@ const metadata = {
     />
   </Fragment>
 
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero Section -->
   <Hero
     id="hero"
-    title="Sarah Johnson"
-    tagline="Personal Web Demo"
-    actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
+    title="Nafissatou Faye"
+    tagline="Engineer in Bioinformatics, Modeling, and Biotechnology"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact me',
+        // This can link to your contact page or simply open an email client:
+        href: 'mailto:nafissatou.faye15@gmail.com',
+      },
+    ]}
   >
     <Fragment slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
-      New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
-      realities.
+      I am passionate about leveraging computational methods to transform raw biological data into actionable insights.
+      My experiences range from data quality and process management in AI-driven biotech to bioinformatics research 
+      projects at leading institutions. I thrive on challenges at the intersection of biology, coding, and innovation.
     </Fragment>
   </Hero>
 
-  <!-- Content Widget **************** -->
-
+  <!-- About Me / Profile Overview -->
   <Content
     id="about"
-    columns={3}
-    items={[
-      {
-        icon: 'tabler:brand-dribbble',
-        callToAction: {
-          target: '_blank',
-          text: 'Dribbble',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-behance',
-        callToAction: {
-          target: '_blank',
-          text: 'Behance',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
-          href: '#',
-        },
-      },
-    ]}
+    columns={1}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/IMG_6111.JPG',
+      alt: 'Profile Background Image',
       loading: 'eager',
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
       <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
+        Curiosity-driven and detail-oriented, I specialize in harnessing bioinformatics, machine learning, and data science
+        to drive breakthroughs in healthcare and biotech. With hands-on experience in data curation, pipeline development,
+        and research collaborations, my focus lies in delivering efficient and reproducible solutions that empower teams
+        and accelerate innovation.
       </p>
-      <br />
+      <br/>
       <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
+        From working on next-generation sequencing data at the Pasteur Institute of Dakar to
+        harmonizing clinical datasets at Owkin, I’m comfortable collaborating in cross-functional
+        environments and adapting quickly to new challenges.
       </p>
-      <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+      <br/>
+      <p>
+        Ready to tackle the next big problem in computational biology? Let’s connect!
+      </p>
     </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
-
+  <!-- Experience -->
   <Steps
-    id="resume"
-    title="Work experience"
+    id="experience"
+    title="Work Experience"
     items={[
       {
-        title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
-        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
+        title: `Intern in Data Quality and Process Management 
+                <br /> <span class="font-normal">Owkin, Paris, France</span> 
+                <br /> <span class="text-sm font-normal">March - September 2024</span>`,
+        description: `• Curated and harmonized clinical, omics, and histopathology datasets for machine learning models. 
+          <br />• Automated processes to improve data handling efficiency for Owkin’s large strategic alliance projects.
+          <br />• Standardized data quality workflows and pipelines, ensuring alignment with Owkin’s standards.
+          <br />• Contributed to the Mosaic Window project for large-scale clinical data curation and public release.`,
         icon: 'tabler:briefcase',
       },
       {
-        title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
-        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+        title: `Intern in Bioinformatics 
+                <br /> <span class="font-normal">Pasteur Institute of Dakar, Dakar, Senegal</span> 
+                <br /> <span class="text-sm font-normal">June - August 2023</span>`,
+        description: `• Developed a bioinformatics pipeline to analyze Illumina SARS-CoV-2 sequencing data: variant calling, consensus generation, phylogenetic analysis.
+          <br />• Validated new tools and delivered progress presentations.
+          <br />• Contributed to monitoring variants and guiding future research applications.`,
         icon: 'tabler:briefcase',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Steps Widget ****************** -->
-
+  <!-- Education -->
   <Steps
-    id="resume"
+    id="education"
     title="Education"
     items={[
       {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
+        title: `Exchange Semester 
+                <br /> <span class="font-normal">Trinity College Dublin (2023 - 2024)</span>`,
+        description: `Machine/Deep Learning, Data Structures, Algorithms, Genomics & Systems Biology, 
+          Molecular Basis of Diseases, Research Methods`,
         icon: 'tabler:school',
       },
       {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
+        title: `Management and leadership program 
+                <br /> <span class="font-normal">Unitech International (2023 - 2024)</span>`,
+        description: `Team leadership, conflict resolution, presentation skills, 
+          project management, and collaboration with corporate partners.`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Biosciences Engineering (2021 - 2024) 
+                <br /> <span class="font-normal">INSA Lyon</span>`,
+        description: `Biotechnologies, Bioinformatics, Modeling, Biostatistics, Biomathematics, 
+          Genetics, Epidemiology, Physical & Organic Chemistry, Software & Web Development, 
+          Algorithms, Programming, Machine Learning.`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `2 years of intensive general engineering studies (2019 - 2021) 
+                <br /> <span class="font-normal">INSA Hauts-de-France</span>`,
+        description: `Mathematics, Algorithms, Programming, Network & Computer Security, Mechanics, Robotics.`,
         icon: 'tabler:school',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Features3 Widget ************** -->
-
+  <!-- Skills -->
   <Features3
+    id="skills"
     title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
+    subtitle="A snapshot of the tools, technologies, and soft skills I bring to the table."
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Graphic design',
-        description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
+        title: 'Programming & Frameworks',
+        description: 'Python, R, C++, C, SQL, Java, BASH, JavaScript, Flask, HTML, CSS.',
       },
       {
-        title: 'Branding and identity',
-        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
+        title: 'Languages',
+        description: 'English (C1), French (Native), Spanish (B2), Arabic (A2).',
       },
       {
-        title: 'User-centered design',
-        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
+        title: 'Soft Skills',
+        description: 'Team Spirit, Adaptability, Problem-Solving, Critical Thinking, Communication, Project & Team Management.',
       },
       {
-        title: 'Adobe Creative Suite',
-        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
+        title: 'Bioinformatics Expertise',
+        description: 'Experience with genomic data analysis, alignment pipelines, variant calling, and omics data curation.',
       },
       {
-        title: 'Typography',
-        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
+        title: 'Machine Learning',
+        description: 'Deep learning for biomedical imaging, segmentation, and classification tasks.',
       },
       {
-        title: 'Color theory',
-        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
+        title: 'Cloud & Dev Tools',
+        description: 'Experience with Nextflow, Git, Docker; adept in collaborative environment & version control.',
       },
       {
-        title: 'Print and digital design',
-        description: 'Knowledgeable in designing for both print materials and digital platforms.',
+        title: 'Management & Leadership',
+        description: 'Project management, team leadership, conflict resolution, cross-functional collaboration.',
       },
       {
-        title: 'Attention to detail',
-        description: 'Diligent in maintaining precision and quality in all design work.',
+        title: 'Interests',
+        description: 'Open-source projects, Poetry, Personal Development, Romance, Psychology, Podcasting, Teaching Arabic.',
       },
       {
-        title: 'Adaptability',
-        description: 'Quick to adapt to new design trends, technologies, and client preferences.',
+        title: 'Certifications',
+        description: 'Genomics Data Science, AI for Medical Diagnosis, more in progress.',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
+  <!-- Projects (keep the same images) -->
   <Content
-    id="porfolio"
-    title="Elevating visual narratives"
-    subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
+    id="projects"
+    title="Projects"
+    subtitle="Below are a few examples of my recent work, illustrating how I tackle challenges in bioinformatics, AI, and software development."
     isReversed
     items={[
       {
         title: 'Description:',
-        description:
-          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+        description: `Developed a Python-based strategy for mapping short genomic sequences ('reads') 
+          to a reference genome, optimizing accuracy and efficiency.`,
       },
       {
         title: 'Role:',
         description:
-          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+          'Led pipeline design and validation, ensuring reproducibility and seamless integration with data analysis workflows.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
+      // Keep the same image as in your original portfolio
+      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&auto=format&fit=crop&w=928&q=80',
       alt: 'Tech Design Image',
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: 'More details',
       icon: 'tabler:chevron-right',
-      href: '#',
+      href: '#', // Link to more info or a GitHub repo if available
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
+        Project 1: <br /><span class="text-2xl">Bioinformatics — Alignment Algorithm</span>
       </h3>
     </Fragment>
 
@@ -239,36 +252,35 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
     isAfterContent={true}
     items={[
       {
         title: 'Description:',
-        description:
-          'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
+        description: `Classification and segmentation of tumor images and ultrasound scans using deep neural networks 
+          and encoder-decoder architectures, with techniques like data augmentation and oversampling.`,
       },
       {
         title: 'Role:',
-        description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
+        description: `Designed and trained neural networks for biomedical imaging, 
+          achieving improvements in segmentation accuracy.`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
       alt: 'Art and Music Poster Image',
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: 'More details',
       icon: 'tabler:chevron-right',
       href: '#',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 2: <br /><span class="text-2xl">Event poster for art & music festival</span>
+        Project 2: <br /><span class="text-2xl">Deep Learning — AI Biomedical Imaging</span>
       </h3>
     </Fragment>
 
@@ -276,8 +288,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
 
   <Content
     isReversed
@@ -285,27 +295,29 @@ const metadata = {
     items={[
       {
         title: 'Description:',
-        description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
+        description: `Implementation and deployment of a robot portrait software from a large database of images 
+          under an Agile Scrum methodology.`,
       },
       {
         title: 'Role:',
-        description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
+        description: `Oversaw iterative sprints, integrated user feedback, ensured continuous delivery of 
+          a functional prototype, and refined user stories for consistent improvement.`,
       },
     ]}
     image={{
-      src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
       alt: 'Fashion e-commerce Image',
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: 'More details',
       icon: 'tabler:chevron-right',
       href: '#',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
+        Project 3: <br /><span class="text-2xl">Software Development — Deep Learning & Agile Scrum</span>
       </h3>
     </Fragment>
 
@@ -314,92 +326,58 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Testimonials Widget *********** -->
-
+  <!-- (Optional) Keep Testimonials if desired, or remove if not needed -->
   <Testimonials
-    title="Client testimonials"
-    subtitle="Discover what clients have to say about their experiences working with me."
+    title="Team Feedback"
+    subtitle="A few words from colleagues and collaborators I’ve worked with."
     testimonials={[
       {
-        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
-        name: 'Mark Thompson',
-        job: 'Creative director',
+        testimonial: `I had the pleasure of working with Nafissatou at Owkin and was very impressed by her efficiency, adaptability, and strong technical skills. She approached each project with a proactive mindset and consistently provided valuable insights and innovative solutions. Nafissatou worked effectively across multiple teams, 
+        demonstrating great versatility. I have no doubt that she will excel in any future role and be a real asset to any company.`,
+        name: 'Jasmine CHEBOUN',
+        job: 'Data Engineer at Owkin',
         image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Mark Thompson Image',
+          src: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+          alt: 'Testimonial Image',
         },
       },
       {
-        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
-        name: 'Emily Martinez',
-        job: 'CEO',
+        testimonial: `Nafissatou understands and implements industry standards in all of her work and 
+        possesses great technical skills. She is proactive, versatile, pleasant to work with, and her problem-solving abilities are outstanding. 
+
+        I would welcome anytime the opportunity to collaborate again with her in the future.`,
+        name: 'Jorge Arellano',
+        job: 'Clinical Data analyst at Owkin',
         image: {
-          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
-          alt: 'Emily Martinez Image',
+          src: 'https://media.licdn.com/dms/image/v2/D5603AQGZAN1UgBxAJw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708645286729?e=1740614400&v=beta&t=4159_GqDGakohLlQTaryFi9iuAHzs9uQWXzJqukxsIs',
+          alt: 'Testimonial Image',
         },
       },
       {
-        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
-        name: 'Laura Simmons',
-        job: 'Founder of an NGO',
+        testimonial: `Nafissatou was an outstanding team member who made a strong impact from the beginning of her internship at Owkin, passing a rigorous recruitment process with ease. She adapted quickly to our agile environment and demonstrated remarkable independence.
+        Early on, she proactively engaged with several departments, fostering collaboration and driving processes forward. Her contributions were consistently valuable, particularly in the data quality pipeline/SOPs and her insightful questions regularly enriched our team discussions. 
+        Nafissatou’s intellectual curiosity and proactive mindset make her a valuable asset to any team, and I highly recommend her. `,
+        name: 'Romane BEAUREPERE',
+        job: 'Project Manager at Owkin',
         image: {
-          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Laura Simmons Image',
-        },
-      },
-      {
-        testimonial: `We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality.`,
-        name: 'Alex Foster',
-        job: 'Director of web services',
-        image: {
-          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Alex Foster Image',
-        },
-      },
-      {
-        testimonial: `She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey.`,
-        name: 'Jessica Collins',
-        job: 'Product Manager',
-        image: {
-          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
-          alt: 'Jessica Collins Image',
-        },
-      },
-      {
-        testimonial: `Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project.`,
-        name: 'Michael Carter',
-        job: 'Event Coordinator',
-        image: {
-          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Michael Carter Image',
+          src: 'https://media.licdn.com/dms/image/v2/D4E03AQE5HLRfyVKjTA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1710879747111?e=1740614400&v=beta&t=1JV23cQKNmnK8KOSRc0v6g6yUiXGjEZUr4PN5TL0q4g',
+          alt: 'Testimonial Image',
         },
       },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
-
+  <!-- Call To Action -->
   <CallToAction
-    title="Let's create together"
-    subtitle="Ready to transform your vision into captivating designs?"
+    title="Interested in collaborating?"
+    subtitle="Whether it's bioinformatics, machine learning, or an interdisciplinary project, let's bring our ideas together."
     actions={[
       {
         variant: 'primary',
-        text: 'Hire me',
-        href: '/',
+        text: 'Get in touch',
+        href: 'mailto:nafissatou.faye15@gmail.com',
       },
     ]}
   />
 
-  <!-- BlogLatestPost Widget **************** -->
-
-  <BlogLatestPosts
-    id="blog"
-    title="Explore my insightful articles on my blog"
-    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
 </Layout>
