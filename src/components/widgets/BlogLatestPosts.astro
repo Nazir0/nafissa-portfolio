@@ -20,7 +20,7 @@ export interface Props extends Widget {
 const {
   title = await Astro.slots.render('title'),
   linkText = 'View all posts',
-  linkUrl = getBlogPermalink(),
+  linkUrl = 'https://medium.com/@nafissatou.faye15',
   information = await Astro.slots.render('information'),
   count = 4,
 
@@ -54,8 +54,6 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
 
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
-
-      <Grid posts={posts} />
     </WidgetWrapper>
   ) : (
     <Fragment />
